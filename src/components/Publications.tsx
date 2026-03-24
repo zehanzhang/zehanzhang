@@ -2,6 +2,8 @@ import { motion } from 'framer-motion'
 import { FiExternalLink } from 'react-icons/fi'
 import { featuredPublications, publications } from '../data/profile'
 
+const base = import.meta.env.BASE_URL
+
 export default function Publications() {
   return (
     <section id="publications" className="py-24 px-6 max-w-6xl mx-auto">
@@ -12,7 +14,7 @@ export default function Publications() {
         transition={{ duration: 0.7 }}
       >
         <div className="flex items-center gap-4 mb-6">
-          <h2 className="text-3xl font-bold text-text-primary">学术论文</h2>
+          <h2 className="text-3xl font-bold text-text-primary font-cn">学术论文</h2>
           <div className="flex-1 h-px bg-gradient-to-r from-primary/40 to-transparent" />
         </div>
 
@@ -28,7 +30,7 @@ export default function Publications() {
         </a>
 
         {/* 代表性工作 */}
-        <h3 className="text-sm font-mono tracking-widest text-text-dim mb-6">
+        <h3 className="text-base font-mono tracking-widest text-text-dim mb-6">
           — 代表性工作
         </h3>
         <div className="grid md:grid-cols-3 gap-6 mb-16">
@@ -47,7 +49,7 @@ export default function Publications() {
               {/* Image */}
               <div className="relative h-48 overflow-hidden bg-dark-800">
                 <img
-                  src={pub.image}
+                  src={`${base}${pub.image}`}
                   alt={pub.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -59,20 +61,20 @@ export default function Publications() {
 
               {/* Content */}
               <div className="flex flex-col flex-1 p-5">
-                <h4 className="text-[15px] font-semibold text-text-primary mb-2 line-clamp-3 group-hover:text-primary transition-colors leading-relaxed">
+                <h4 className="text-base font-semibold text-text-primary mb-2 line-clamp-3 group-hover:text-primary transition-colors leading-relaxed">
                   {pub.title}
                 </h4>
                 <p className="text-sm text-text-dim mb-3">{pub.authors}</p>
-                <p className="text-sm text-text-secondary leading-relaxed flex-1">
+                <p className="text-[15px] text-text-secondary leading-relaxed flex-1 font-cn">
                   {pub.description}
                 </p>
                 <div className="flex items-center justify-between mt-4 pt-3 border-t border-glass-border">
-                  <span className="font-mono text-xs text-text-dim">{pub.year}</span>
+                  <span className="font-mono text-sm text-text-dim">{pub.year}</span>
                   {pub.citations != null && (
-                    <span className="font-mono text-xs text-primary/70">引用 {pub.citations}</span>
+                    <span className="font-mono text-sm text-primary/70">引用 {pub.citations}</span>
                   )}
-                  <span className="text-xs text-text-dim group-hover:text-primary transition-colors flex items-center gap-1">
-                    查看论文 <FiExternalLink size={11} />
+                  <span className="text-sm text-text-dim group-hover:text-primary transition-colors flex items-center gap-1">
+                    查看论文 <FiExternalLink size={12} />
                   </span>
                 </div>
               </div>
@@ -81,7 +83,7 @@ export default function Publications() {
         </div>
 
         {/* 全部论文 */}
-        <h3 className="text-sm font-mono tracking-widest text-text-dim mb-6">
+        <h3 className="text-base font-mono tracking-widest text-text-dim mb-6">
           — 全部论文
         </h3>
         <div className="space-y-0 divide-y divide-glass-border border border-glass-border rounded-xl overflow-hidden">
@@ -97,14 +99,14 @@ export default function Publications() {
               transition={{ duration: 0.4, delay: Math.min(i * 0.05, 0.4) }}
               className="group flex items-start gap-4 px-5 py-4 bg-glass-bg hover:bg-primary/5 transition-colors"
             >
-              <span className="font-mono text-xs text-text-dim w-10 shrink-0 pt-0.5">
+              <span className="font-mono text-sm text-text-dim w-10 shrink-0 pt-0.5">
                 {pub.year}
               </span>
               <div className="flex-1 min-w-0">
-                <p className="text-sm text-text-primary group-hover:text-primary transition-colors leading-snug mb-1">
+                <p className="text-[15px] text-text-primary group-hover:text-primary transition-colors leading-snug mb-1">
                   {pub.title}
                 </p>
-                <div className="flex items-center gap-3 text-xs text-text-dim flex-wrap">
+                <div className="flex items-center gap-3 text-sm text-text-dim flex-wrap">
                   <span>{pub.authors}</span>
                   <span className="text-dark-500">·</span>
                   <span className="text-text-secondary">{pub.venue}</span>
@@ -112,11 +114,11 @@ export default function Publications() {
               </div>
               <div className="flex items-center gap-3 shrink-0">
                 {pub.citations != null && (
-                  <span className="font-mono text-xs text-primary/60 hidden sm:block">
+                  <span className="font-mono text-sm text-primary/60 hidden sm:block">
                     {pub.citations}↗
                   </span>
                 )}
-                <FiExternalLink size={14} className="text-text-dim group-hover:text-primary transition-colors" />
+                <FiExternalLink size={15} className="text-text-dim group-hover:text-primary transition-colors" />
               </div>
             </motion.a>
           ))}

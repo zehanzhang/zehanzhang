@@ -81,7 +81,7 @@ export const featuredPublications: FeaturedPublication[] = [
     venue: 'arXiv 2025',
     year: 2025,
     link: 'https://arxiv.org/abs/2603.01928',
-    image: '/images/last-vla.png',
+    image: 'images/last-vla.png',
     description: '提出在潜在时空空间中进行推理的视觉-语言-动作模型，将大语言模型与时空表征相结合，实现端到端自动驾驶决策与规划。',
   },
   {
@@ -91,7 +91,7 @@ export const featuredPublications: FeaturedPublication[] = [
     year: 2024,
     citations: 1,
     link: 'https://arxiv.org/abs/2412.18131',
-    image: '/images/uniplv.png',
+    image: 'images/uniplv.png',
     description: '通过区域视觉语言监督实现标签高效的开放世界3D场景理解，大幅减少对人工标注的依赖，提升模型在未知类别上的泛化能力。',
   },
   {
@@ -101,7 +101,7 @@ export const featuredPublications: FeaturedPublication[] = [
     year: 2021,
     citations: 92,
     link: 'https://openaccess.thecvf.com/content/CVPR2021/html/Liang_RangeIoUDet_Range_Image_Based_Real-Time_3D_Object_Detector_Optimized_by_CVPR_2021_paper.html',
-    image: '/images/rangeioudet.png',
+    image: 'images/rangeioudet.png',
     description: '基于距离图像表征的实时3D目标检测器，利用IoU优化策略显著提升检测精度，在KITTI基准上达到实时性与精度的最佳平衡。',
   },
 ]
